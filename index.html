@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Mâm Cỗ Tết">
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧧</text></svg>">
-  <link rel="manifest" href="data:application/json,%7B%22name%22%3A%22Th%E1%BB%B1c%20%C4%91%C6%A1n%20T%E1%BA%BFt%22%2C%22short_name%22%3A%22M%C3%A2m%20C%E1%BB%97%20T%E1%BA%BFt%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%23c41e3a%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%A7%A7%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+  <link rel="manifest" href="manifest.json">
   <title>Thực đơn Tết</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -1102,8 +1102,36 @@
 
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('data:text/javascript,self.addEventListener("fetch",e=>e.respondWith(fetch(e.request)))').catch(() => {});
+      navigator.serviceWorker.register('./sw.js');
     }
+
+    // Install as App prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const banner = document.createElement('div');
+      banner.id = 'installBanner';
+      banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#c41e3a,#e74c3c);color:#fff;padding:1rem;display:flex;align-items:center;justify-content:center;gap:0.8rem;z-index:9999;box-shadow:0 -2px 12px rgba(0,0,0,0.15)';
+      banner.innerHTML = `
+        <span style="font-size:0.95rem">📲 Cài đặt ứng dụng Thực đơn Tết!</span>
+        <button id="installBtn" style="background:#ffe066;color:#4a2c2a;border:none;padding:0.6rem 1.4rem;border-radius:8px;font-weight:700;font-size:0.95rem;cursor:pointer">Cài đặt</button>
+        <button id="installClose" style="background:none;border:none;color:#ffe066;font-size:1.4rem;cursor:pointer">&times;</button>
+      `;
+      document.body.appendChild(banner);
+      document.getElementById('installBtn').onclick = async () => {
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        banner.remove();
+      };
+      document.getElementById('installClose').onclick = () => banner.remove();
+    });
+
+    window.addEventListener('appinstalled', () => {
+      const b = document.getElementById('installBanner');
+      if (b) b.remove();
+    });
   </script>
 </body>
 </html>
