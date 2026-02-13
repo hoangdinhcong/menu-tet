@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Tet - Thuc Don Tet 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: #fdf6ec;
+      color: #4a2c2a;
+      min-height: 100vh;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #d4451a 100%);
+      color: #ffe066;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255,224,102,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255,224,102,0.1) 0%, transparent 50%);
+    }
+
+    .banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .banner p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .lanterns {
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 0.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #c0392b;
+      border-bottom: 2px solid #e8c547;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dish-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .dish-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 4px solid #e8c547;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dish-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .dish-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #c0392b;
+    }
+
+    .dish-desc {
+      font-size: 0.92rem;
+      color: #6b4c3b;
+      margin-top: 0.3rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #a08060;
+      font-size: 0.9rem;
+      border-top: 1px solid #e8d5b5;
+    }
+
+    @media (max-width: 600px) {
+      .banner h1 { font-size: 2rem; }
+      .dish-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="lanterns">🏮🏮🏮</div>
+    <h1>Thuc Don Tet 2026</h1>
+    <p>Binh An - Hanh Phuc - Thinh Vuong</p>
+  </div>
+
+  <div class="container">
+
+    <div class="section">
+      <h2 class="section-title">🥢 Mon Truyen Thong</h2>
+      <ul class="dish-list">
+        <li class="dish-item">
+          <div class="dish-name">Banh Chung / Banh Tet</div>
+          <div class="dish-desc">Banh gao nep nhan dau xanh, thit heo — linh hon cua mam co Tet.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Gio Lua (Cha Lua)</div>
+          <div class="dish-desc">Gio heo hap la chuoi, thom nhe, dai miu.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Thit Kho Trung</div>
+          <div class="dish-desc">Thit heo kho voi nuoc dua, trung, vi ngot bui dam da.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Canh Kho Qua Nhoi Thit</div>
+          <div class="dish-desc">Muop dang nhoi thit bam, nau canh thanh mat dau nam.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🍲 Mon Man</h2>
+      <ul class="dish-list">
+        <li class="dish-item">
+          <div class="dish-name">Ga Luoc La Chanh</div>
+          <div class="dish-desc">Ga ta luoc chin mem, cham muoi tieu chanh.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Nem Ran (Cha Gio)</div>
+          <div class="dish-desc">Nem chien gion voi nhan thit, mien, nam moc nhi.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Xoi Gac</div>
+          <div class="dish-desc">Xoi nep do tuoi mau gac, deo thom, mang may man.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Tom Rim</div>
+          <div class="dish-desc">Tom su rim nuoc mam ngot, thom lung, dua com tuyet voi.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🍬 Mon Ngot & Do Uong</h2>
+      <ul class="dish-list">
+        <li class="dish-item">
+          <div class="dish-name">Mut Tet</div>
+          <div class="dish-desc">Mut dua, mut gung, mut sen, hat dinh — khay mut ngay Tet.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Che Troi Nuoc</div>
+          <div class="dish-desc">Banh troi nuoc nhan dau xanh, chan nuoc duong gung am bung.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Tra Sen / Tra Hoa Cuc</div>
+          <div class="dish-desc">Tra nong thuong thuc cung banh mut, thom nhe thanh tao.</div>
+        </li>
+        <li class="dish-item">
+          <div class="dish-name">Nuoc Mia / Nuoc Dua Tuoi</div>
+          <div class="dish-desc">Giai khat tu nhien, mat lanh ngay xuan.</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    Chuc Mung Nam Moi 2026 — Binh An & Thinh Vuong
+  </footer>
+
+</body>
+</html>
