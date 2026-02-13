@@ -2,209 +2,1108 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Tet - Thuc Don Tet 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#c41e3a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mâm Cỗ Tết">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧧</text></svg>">
+  <link rel="manifest" href="data:application/json,%7B%22name%22%3A%22Th%E1%BB%B1c%20%C4%91%C6%A1n%20T%E1%BA%BFt%22%2C%22short_name%22%3A%22M%C3%A2m%20C%E1%BB%97%20T%E1%BA%BFt%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%23c41e3a%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%A7%A7%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+  <title>Thực đơn Tết</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Lora', serif;
-      background: #fdf6ec;
-      color: #4a2c2a;
-      min-height: 100vh;
-    }
-
-    .banner {
-      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #d4451a 100%);
-      color: #ffe066;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .banner::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(255,224,102,0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(255,224,102,0.1) 0%, transparent 50%);
-    }
-
-    .banner h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      position: relative;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .banner p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      opacity: 0.9;
-      position: relative;
-    }
-
-    .lanterns {
-      text-align: center;
-      font-size: 2.5rem;
-      padding: 0.5rem;
-      position: relative;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .section {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #c0392b;
-      border-bottom: 2px solid #e8c547;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .dish-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .dish-item {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-left: 4px solid #e8c547;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .dish-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-
-    .dish-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #c0392b;
-    }
-
-    .dish-desc {
-      font-size: 0.92rem;
-      color: #6b4c3b;
-      margin-top: 0.3rem;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #a08060;
-      font-size: 0.9rem;
-      border-top: 1px solid #e8d5b5;
-    }
-
-    @media (max-width: 600px) {
-      .banner h1 { font-size: 2rem; }
-      .dish-list { grid-template-columns: 1fr; }
-    }
+    * { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+    body { background: #f5f5f5; overscroll-behavior: none; }
+    .tab-active { background: #c41e3a; color: white; }
+    .day-active { background: #c41e3a; color: white; }
+    .day-inactive { background: white; color: #666; border: 1px solid #e0e0e0; }
+    .slide-up { animation: slideUp 0.25s ease-out; }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .checkbox-done { background: #c41e3a; border-color: #c41e3a; }
+    .checkbox-bought { background: #16a34a; border-color: #16a34a; }
+    .line-through-custom { text-decoration: line-through; color: #999; }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    input[type="checkbox"] { accent-color: #c41e3a; }
+    ::-webkit-scrollbar { display: none; }
   </style>
 </head>
 <body>
+  <div id="app" class="max-w-md mx-auto bg-white min-h-screen flex flex-col"></div>
+  
+  <!-- Popup container - render separately to avoid flicker -->
+  <div id="popup-container"></div>
 
-  <div class="banner">
-    <div class="lanterns">🏮🏮🏮</div>
-    <h1>Thuc Don Tet 2026</h1>
-    <p>Binh An - Hanh Phuc - Thinh Vuong</p>
-  </div>
+  <script>
+    // ==================== DATA ====================
+    const dishesData = [
+      // Món dùng chung (số lượng cố định, không nhân theo ngày)
+      { id: 'nem', name: 'Nem rán', note: '30 cái', perDay: false, source: null },
+      { id: 'gio-xao', name: 'Giò xào', note: null, perDay: false, source: 'Đợi chú Dũng' },
+      { id: 'gio-be', name: 'Giò bê', note: '1kg', perDay: false, source: null },
+      { id: 'thit-dong', name: 'Thịt đông', note: '1kg chân giò, tai, lưỡi', perDay: false, source: null },
+      { id: 'banh-chung', name: 'Bánh chưng / Bánh tét', note: null, perDay: false, source: null },
+      { id: 'bo-ngam-mam', name: 'Bò ngâm mắm', note: '2 bắp', perDay: false, source: null },
+      { id: 'chan-gio-muoi', name: 'Chân giò muối', note: '1 gói', perDay: false, source: null },
+      { id: 'cha-com', name: 'Chả cốm', note: '1 gói', perDay: false, source: null },
+      
+      // Món tính theo ngày (nhân số lượng)
+      { id: 'tom-hap', name: 'Tôm hấp', note: '10 con', perDay: true, source: null },
+      { id: 'ca-nuong', name: 'Cá nướng/chiên', note: '0.5kg tầm/lăng/trắm', perDay: true, source: null },
+      { id: 'ga-luoc', name: 'Gà luộc', note: '2-3 con', perDay: true, source: '2 con nhà Duyên' },
+      { id: 'rau', name: 'Rau xào', note: null, perDay: true, source: 'Nhà anh Lâm' },
+      { id: 'suon-chua-ngot', name: 'Sườn chua ngọt', note: '1kg', perDay: true, source: null },
+      { id: 'khoai-tay-thit-bo', name: 'Khoai tây thịt bò', note: '0.5kg khoai, 0.2kg bò', perDay: true, source: null },
+      
+      // Đĩa xào
+      { id: 'xao-thap-cam', name: 'Xào thập cẩm', note: null, perDay: true, source: null },
+      { id: 'xao-ngo-hat-luu', name: 'Ngô hạt lựu', note: null, perDay: true, source: null },
+      { id: 'xao-cai-chip-nam', name: 'Cải chíp xào nấm', note: null, perDay: true, source: null },
+      
+      // Canh
+      { id: 'canh-suon-khoai-so', name: 'Canh sườn khoai sọ', note: null, perDay: true, source: null },
+      { id: 'canh-suon-khoai-tay', name: 'Canh sườn khoai tây cà rốt', note: null, perDay: true, source: null },
+      { id: 'canh-xu-hao', name: 'Canh xu hào cà rốt nấm ngô', note: null, perDay: true, source: null },
+      
+      // Nộm/Salad
+      { id: 'nom-xu-hao', name: 'Nộm xu hào cà rốt', note: 'Xu hào, cà rốt, dưa chuột, bắp cải tím', perDay: true, source: null },
+      { id: 'salad-nga', name: 'Salad Nga', note: 'Khoai tây, cà rốt, dưa chuột, ngô, đậu, trứng', perDay: true, source: null },
+      { id: 'nom-ga', name: 'Nộm gà xé phay', note: 'Hành tây, rau thơm, lạc, bắp cải tím', perDay: true, source: null },
+    ];
 
-  <div class="container">
+    // Complete recipe database
+    const recipes = {
+      'tom-hap': {
+        name: 'Tôm hấp',
+        time: '20 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Tôm sú tươi - 10 con (~500g)',
+          'Sả - 2 cây (đập dập)',
+          'Gừng - 1 củ nhỏ (thái lát)',
+          'Bia/Rượu trắng - 100ml',
+          'Muối - 1 thìa cà phê',
+          'Tiêu - 1/2 thìa cà phê',
+          'Chanh - 2 quả',
+          'Ớt tươi - 2-3 quả'
+        ],
+        steps: [
+          'Tôm rửa sạch, cắt râu chân, để ráo',
+          'Xếp sả đập dập, gừng thái lát xuống đáy nồi',
+          'Xếp tôm lên trên, rắc muối tiêu',
+          'Đổ bia/rượu vào, đậy nắp',
+          'Hấp lửa lớn 6-8 phút đến khi tôm đỏ',
+          'Pha nước chấm: chanh + muối + tiêu + ớt băm'
+        ]
+      },
+      'nem': {
+        name: 'Nem rán',
+        time: '1 tiếng',
+        servings: '30 cái',
+        ingredients: [
+          'Thịt lợn xay - 300g',
+          'Tôm tươi - 150g (bóc vỏ, băm)',
+          'Miến dong - 50g (ngâm, cắt nhỏ)',
+          'Mộc nhĩ - 30g (ngâm, thái chỉ)',
+          'Nấm hương - 5-6 cái (ngâm, thái nhỏ)',
+          'Cà rốt - 1 củ nhỏ (bào sợi)',
+          'Củ đậu - 100g (thái sợi)',
+          'Hành tây - 1/2 củ (băm nhỏ)',
+          'Trứng gà - 1 quả',
+          'Bánh đa nem - 30 cái',
+          'Nước mắm - 1 thìa canh',
+          'Tiêu - 1/2 thìa cà phê',
+          'Dầu rán - 500ml'
+        ],
+        steps: [
+          'Miến, mộc nhĩ, nấm hương ngâm nước ấm, thái nhỏ',
+          'Trộn đều thịt, tôm, miến, mộc nhĩ, nấm, cà rốt, củ đậu, hành',
+          'Thêm trứng, nước mắm, tiêu, trộn kỹ',
+          'Bánh đa làm mềm bằng khăn ẩm',
+          'Lấy 1 thìa nhân, cuộn nem chặt tay, gấp mép gọn',
+          'Rán dầu nóng 170°C, vàng đều 2 lần để giòn'
+        ]
+      },
+      'thit-dong': {
+        name: 'Thịt đông',
+        time: '3 tiếng',
+        servings: '4-6 người',
+        ingredients: [
+          'Chân giò lợn - 500g',
+          'Tai lợn - 250g',
+          'Lưỡi lợn - 250g',
+          'Bì lợn - 200g (tạo độ đông)',
+          'Mộc nhĩ - 30g (ngâm, thái sợi)',
+          'Nấm hương - 20g (ngâm, thái sợi)',
+          'Hành tím - 5 củ',
+          'Nước mắm - 4 thìa canh',
+          'Tiêu hạt - 1 thìa canh'
+        ],
+        steps: [
+          'Thịt chân giò, tai, lưỡi chần sơ, cạo rửa sạch',
+          'Cho thịt vào nồi, đổ nước ngập, ninh nhỏ lửa 2 tiếng',
+          'Vớt thịt ra, thái miếng vừa ăn. Lọc nước dùng',
+          'Cho thịt, mộc nhĩ, nấm hương vào nước dùng',
+          'Nêm nước mắm, tiêu, ninh thêm 30 phút',
+          'Đổ ra khay/bát, để nguội cho vào tủ lạnh qua đêm'
+        ]
+      },
+      'ga-luoc': {
+        name: 'Gà luộc',
+        time: '45 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Gà ta - 1 con (1.2-1.5kg)',
+          'Muối hạt - 2 thìa canh',
+          'Gừng - 1 củ to (đập dập)',
+          'Hành tím - 3 củ',
+          'Lá chanh - 5-7 lá',
+          'Rau răm - 1 bó',
+          'Chanh - 2 quả',
+          'Ớt - 3-4 quả'
+        ],
+        steps: [
+          'Gà làm sạch, chà muối và gừng đập dập khắp thân',
+          'Đun nồi nước lớn sôi, cho hành, gừng, lá chanh',
+          'Thả gà vào, luộc lửa vừa 30-35 phút',
+          'Tắt bếp, để gà trong nồi thêm 10 phút',
+          'Vớt gà ra, nhúng nước đá lạnh để da giòn',
+          'Chặt miếng, pha muối tiêu chanh ớt để chấm'
+        ]
+      },
+      'bo-ngam-mam': {
+        name: 'Bò ngâm mắm',
+        time: '1 tiếng + 3 ngày ngâm',
+        servings: '4-6 người',
+        ingredients: [
+          'Bắp bò - 2 bắp (~1kg)',
+          'Nước mắm ngon - 300ml',
+          'Đường phèn/đường vàng - 100g',
+          'Gừng - 1 củ to (thái lát)',
+          'Tỏi - 1 củ (đập dập)',
+          'Hoa hồi - 3 cánh',
+          'Quế - 1 thanh nhỏ',
+          'Tiêu hạt - 1 thìa canh',
+          'Ớt khô - 3-4 quả'
+        ],
+        steps: [
+          'Bắp bò rửa sạch, loại bỏ mỡ thừa',
+          'Luộc bò với gừng, hoa hồi, quế, tiêu 40 phút',
+          'Vớt ra ngâm nước đá 15 phút, thấm khô',
+          'Pha nước ngâm: nước mắm + đường + tỏi + ớt, đun sôi để nguội',
+          'Cho bò vào lọ thủy tinh sạch, đổ nước mắm ngập',
+          'Đậy kín, ngâm tủ lạnh 3-5 ngày. Thái lát mỏng khi ăn'
+        ]
+      },
+      'suon-chua-ngot': {
+        name: 'Sườn chua ngọt',
+        time: '45 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Sườn non - 1kg (chặt miếng)',
+          'Tương cà - 3 thìa canh',
+          'Giấm/chanh - 2 thìa canh',
+          'Đường - 3 thìa canh',
+          'Nước mắm - 2 thìa canh',
+          'Hành tím, tỏi - băm nhỏ',
+          'Hành tây - 1 củ (bổ múi)',
+          'Ớt chuông - 1/2 quả',
+          'Dứa (thơm) - 1/4 quả',
+          'Bột năng - 1 thìa canh'
+        ],
+        steps: [
+          'Sườn chặt miếng, chần qua nước sôi, rửa sạch',
+          'Ướp sườn với 1 thìa nước mắm, tiêu 15 phút',
+          'Chiên sườn vàng giòn, vớt ra',
+          'Pha sốt: tương cà + giấm + đường + nước mắm + chút nước',
+          'Phi tỏi, cho sốt vào đun sôi, thêm sườn rim 10 phút',
+          'Cho dứa, hành tây, ớt chuông vào đảo nhanh',
+          'Rưới bột năng pha nước để sốt sánh'
+        ]
+      },
+      'canh-suon-khoai-so': {
+        name: 'Canh sườn khoai sọ',
+        time: '1 tiếng',
+        servings: '4-6 người',
+        ingredients: [
+          'Sườn non - 400g (chặt miếng)',
+          'Khoai sọ - 400g (gọt vỏ)',
+          'Hành tím - 3 củ',
+          'Nước mắm - 2 thìa canh',
+          'Hạt nêm - 1 thìa cà phê',
+          'Hành lá - 2 cây',
+          'Rau mùi - 1 bó nhỏ',
+          'Tiêu - 1/2 thìa cà phê'
+        ],
+        steps: [
+          'Sườn chặt miếng, chần qua nước sôi, rửa sạch',
+          'Khoai sọ gọt vỏ, ngâm nước muối tránh ngứa',
+          'Phi hành thơm, cho sườn vào xào săn',
+          'Đổ nước ngập, ninh nhỏ lửa 30 phút',
+          'Cho khoai sọ vào, nấu thêm 15 phút',
+          'Nêm nước mắm, hạt nêm. Rắc hành, rau mùi, tiêu'
+        ]
+      },
+      'canh-suon-khoai-tay': {
+        name: 'Canh sườn khoai tây cà rốt',
+        time: '50 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Sườn non - 400g',
+          'Khoai tây - 300g',
+          'Cà rốt - 2 củ',
+          'Hành tây - 1 củ',
+          'Gừng - 1 củ nhỏ',
+          'Nước mắm - 2 thìa canh',
+          'Muối, tiêu, hành lá'
+        ],
+        steps: [
+          'Sườn chần sơ, rửa sạch bọt',
+          'Cho sườn vào nồi nước lạnh cùng gừng đập',
+          'Đun sôi, hạ lửa nhỏ ninh 25 phút',
+          'Thêm khoai tây, cà rốt, hành tây cắt miếng',
+          'Nấu thêm 15 phút đến khi rau củ mềm',
+          'Nêm nước mắm, muối, tiêu. Rắc hành lá'
+        ]
+      },
+      'canh-xu-hao': {
+        name: 'Canh xu hào cà rốt nấm ngô',
+        time: '30 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Xu hào - 1 củ to',
+          'Cà rốt - 1 củ',
+          'Ngô ngọt - 1 bắp (cắt khúc)',
+          'Nấm rơm/nấm hương - 100g',
+          'Thịt bằm - 150g (viên nhỏ)',
+          'Hành lá - 2 cây',
+          'Nước mắm - 1.5 thìa canh',
+          'Hạt nêm - 1 thìa cà phê'
+        ],
+        steps: [
+          'Xu hào, cà rốt gọt vỏ, thái miếng',
+          'Thịt bằm viên nhỏ, chần qua nước sôi',
+          'Đun sôi nồi nước, cho ngô vào trước 10 phút',
+          'Thêm xu hào, cà rốt, nấm, viên thịt',
+          'Nấu 10 phút, nêm nước mắm, hạt nêm',
+          'Tắt bếp, rắc hành lá thái nhỏ'
+        ]
+      },
+      'nom-xu-hao': {
+        name: 'Nộm xu hào cà rốt',
+        time: '25 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Xu hào - 1 củ (bào sợi)',
+          'Cà rốt - 1 củ (bào sợi)',
+          'Dưa chuột - 1 quả (thái sợi)',
+          'Bắp cải tím - 100g (thái sợi)',
+          'Rau răm - 1 bó',
+          'Lạc rang - 50g (giã dập)',
+          'Giấm - 3 thìa canh',
+          'Đường - 2 thìa canh',
+          'Nước mắm - 2 thìa canh',
+          'Tỏi, ớt - băm nhỏ'
+        ],
+        steps: [
+          'Xu hào, cà rốt bào sợi, ngâm nước đá cho giòn',
+          'Dưa chuột, bắp cải thái sợi mỏng',
+          'Pha nước trộn: giấm + đường + nước mắm + tỏi ớt',
+          'Vắt ráo rau củ, cho vào tô lớn',
+          'Trộn đều với nước sốt, để ngấm 10 phút',
+          'Rắc rau răm, lạc rang. Dùng ngay để giữ giòn'
+        ]
+      },
+      'salad-nga': {
+        name: 'Salad Nga',
+        time: '40 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Khoai tây - 300g (luộc, cắt hạt lựu)',
+          'Cà rốt - 2 củ (luộc, cắt hạt lựu)',
+          'Dưa chuột - 1 quả (cắt hạt lựu)',
+          'Ngô ngọt - 100g (luộc)',
+          'Đậu Hà Lan - 100g (luộc)',
+          'Trứng gà - 3 quả (luộc, cắt nhỏ)',
+          'Xúc xích/giăm bông - 100g (cắt hạt lựu)',
+          'Mayonnaise - 150g',
+          'Sữa chua không đường - 50g',
+          'Muối, tiêu - vừa đủ'
+        ],
+        steps: [
+          'Khoai tây, cà rốt luộc chín, để nguội, cắt hạt lựu',
+          'Trứng luộc chín, bóc vỏ, cắt nhỏ',
+          'Dưa chuột cắt hạt lựu, rắc muối, vắt ráo',
+          'Trộn mayonnaise với sữa chua, muối, tiêu',
+          'Cho tất cả nguyên liệu vào tô, trộn đều với sốt',
+          'Để tủ lạnh 30 phút, dùng lạnh'
+        ]
+      },
+      'nom-ga': {
+        name: 'Nộm gà xé phay',
+        time: '45 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Ức gà/đùi gà - 400g (luộc, xé sợi)',
+          'Hành tây - 1 củ (thái mỏng)',
+          'Bắp cải tím - 150g (thái sợi)',
+          'Rau thơm (húng, mùi) - 1 bó',
+          'Lạc rang - 50g (giã dập)',
+          'Hành phi - 30g',
+          'Chanh - 2 quả',
+          'Nước mắm - 3 thìa canh',
+          'Đường - 2 thìa canh',
+          'Tỏi, ớt - băm nhỏ'
+        ],
+        steps: [
+          'Gà luộc chín, để nguội, xé sợi nhỏ',
+          'Hành tây thái mỏng, ngâm nước đá bớt hăng',
+          'Bắp cải thái sợi, ngâm nước đá cho giòn',
+          'Pha nước trộn: nước cốt chanh + mắm + đường + tỏi ớt',
+          'Trộn gà với hành tây, bắp cải',
+          'Cho nước trộn vào đảo đều',
+          'Rắc rau thơm, lạc, hành phi lên trên'
+        ]
+      },
+      'xao-thap-cam': {
+        name: 'Xào thập cẩm',
+        time: '30 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Thịt bò/lợn - 200g (thái lát)',
+          'Tôm - 150g (bóc vỏ)',
+          'Mực - 150g (cắt khoanh)',
+          'Cà rốt - 1 củ (thái hoa)',
+          'Ngô bao tử - 100g',
+          'Súp lơ - 200g',
+          'Đậu Hà Lan - 50g',
+          'Nấm hương - 5-6 cái',
+          'Tỏi - 4 tép (băm)',
+          'Dầu hào - 2 thìa canh',
+          'Muối, tiêu'
+        ],
+        steps: [
+          'Rau củ rửa sạch, cắt miếng, chần sơ',
+          'Tôm, mực ướp chút muối tiêu',
+          'Phi tỏi, xào thịt chín tới, đổ ra',
+          'Xào tôm mực riêng, đổ ra',
+          'Xào rau củ lửa lớn, thêm dầu hào',
+          'Cho thịt, tôm mực vào, đảo đều, nêm vừa'
+        ]
+      },
+      'xao-ngo-hat-luu': {
+        name: 'Ngô hạt lựu xào tôm',
+        time: '30 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Ngô ngọt - 2 bắp (tách hạt)',
+          'Tôm tươi - 200g (bóc vỏ)',
+          'Cà rốt - 1 củ (thái hạt lựu)',
+          'Đậu Hà Lan - 100g',
+          'Hành tây - 1/2 củ (thái hạt lựu)',
+          'Tỏi - 3 tép (băm)',
+          'Dầu hào - 1 thìa canh',
+          'Muối, tiêu, đường'
+        ],
+        steps: [
+          'Tôm bóc vỏ, ướp chút muối tiêu',
+          'Cà rốt, hành tây thái hạt lựu nhỏ đều',
+          'Chần ngô, cà rốt, đậu qua nước sôi',
+          'Phi tỏi, xào tôm chín hồng, đổ ra',
+          'Xào ngô, cà rốt, đậu, hành với dầu hào',
+          'Cho tôm vào, nêm gia vị, đảo nhanh'
+        ]
+      },
+      'xao-cai-chip-nam': {
+        name: 'Cải chíp xào nấm',
+        time: '15 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Cải chíp - 500g',
+          'Nấm hương - 100g',
+          'Nấm kim châm - 100g',
+          'Tỏi - 6 tép (băm)',
+          'Dầu hào - 2 thìa canh',
+          'Dầu ăn - 3 thìa canh',
+          'Muối, đường',
+          'Bột năng - 1 thìa (pha loãng)'
+        ],
+        steps: [
+          'Cải chíp bổ dọc, rửa sạch, để ráo',
+          'Nấm hương thái lát, nấm kim châm cắt gốc',
+          'Chần cải qua nước sôi có chút muối, dầu',
+          'Phi tỏi thơm, xào nấm với dầu hào',
+          'Xếp cải ra đĩa, chan nấm xào lên trên',
+          'Rưới chút bột năng pha loãng để sánh'
+        ]
+      },
+      'ca-nuong': {
+        name: 'Cá nướng/chiên',
+        time: '40 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Cá (tầm/lăng/trắm) - 0.5kg',
+          'Hành tím - 3 củ (băm)',
+          'Tỏi - 5 tép (băm)',
+          'Sả - 2 cây (băm)',
+          'Nghệ tươi/bột - 1 củ nhỏ',
+          'Nước mắm - 2 thìa canh',
+          'Dầu ăn - 3 thìa canh',
+          'Tiêu, đường',
+          'Thì là/hành lá - 1 bó'
+        ],
+        steps: [
+          'Cá làm sạch, khứa vài đường trên thân',
+          'Trộn hành, tỏi, sả, nghệ, nước mắm, tiêu, đường',
+          'Ướp cá với gia vị 15-20 phút',
+          'Nướng: lò 200°C trong 20-25 phút, lật đều',
+          'Hoặc chiên: dầu nóng già, chiên vàng đều 2 mặt',
+          'Rắc thì là/hành lá trang trí'
+        ]
+      },
+      'khoai-tay-thit-bo': {
+        name: 'Khoai tây xào thịt bò',
+        time: '40 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Thịt bò - 200g (thái miếng)',
+          'Khoai tây - 500g (cắt miếng)',
+          'Cà rốt - 1 củ',
+          'Hành tây - 1 củ (bổ múi)',
+          'Tỏi - 4 tép (băm)',
+          'Nước tương - 2 thìa canh',
+          'Dầu hào - 1 thìa canh',
+          'Tiêu - 1/2 thìa cà phê',
+          'Dầu ăn - 3 thìa canh'
+        ],
+        steps: [
+          'Bò thái miếng, ướp nước tương, tiêu, tỏi',
+          'Khoai tây, cà rốt gọt vỏ, cắt miếng vuông',
+          'Xào bò lửa lớn chín tái, đổ ra',
+          'Xào khoai tây, cà rốt cho hơi vàng',
+          'Thêm nước xâm xấp, ninh 20 phút',
+          'Cho bò, hành tây, dầu hào vào rim đến cạn'
+        ]
+      },
+      'rau': {
+        name: 'Rau xào tỏi',
+        time: '10 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Rau cải/rau muống - 500g',
+          'Tỏi - 4 tép (băm)',
+          'Dầu ăn - 2 thìa canh',
+          'Nước mắm - 1 thìa canh',
+          'Hạt nêm - 1/2 thìa cà phê'
+        ],
+        steps: [
+          'Rau nhặt sạch, rửa kỹ, để ráo',
+          'Phi tỏi thơm với dầu ăn',
+          'Cho rau vào xào lửa lớn, đảo nhanh',
+          'Nêm nước mắm, hạt nêm vừa ăn',
+          'Xào 2-3 phút đến khi rau vừa chín tới'
+        ]
+      },
+      'gio-xao': {
+        name: 'Giò xào',
+        time: '1.5 tiếng',
+        servings: '4-6 người',
+        ingredients: [
+          'Thịt ba chỉ - 500g',
+          'Mộc nhĩ - 50g (ngâm, thái sợi)',
+          'Nấm hương - 30g (ngâm, thái sợi)',
+          'Trứng gà - 5 quả',
+          'Hành khô - 5 củ (phi vàng)',
+          'Nước mắm - 3 thìa canh',
+          'Tiêu - 1 thìa cà phê',
+          'Lá chuối - 3-4 lá (hơ mềm)'
+        ],
+        steps: [
+          'Thịt ba chỉ thái miếng mỏng, ướp nước mắm, tiêu',
+          'Xào thịt chín tới, thêm mộc nhĩ, nấm hương',
+          'Trứng đánh tan, đổ vào trộn đều với thịt',
+          'Thêm hành phi, đảo lửa nhỏ đến khi trứng se',
+          'Lá chuối hơ mềm, lót khuôn hoặc gói hình trụ',
+          'Cho hỗn hợp vào nén chặt, hấp 45-60 phút'
+        ]
+      },
+      'gio-be': {
+        name: 'Giò bê',
+        time: '10 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Giò bê - 1kg (mua sẵn)',
+          'Dưa góp - 200g',
+          'Rau mùi - 1 bó nhỏ'
+        ],
+        steps: [
+          'Giò bê để tủ lạnh đến khi dùng',
+          'Lấy ra 15 phút trước để bớt lạnh',
+          'Thái lát vừa ăn, khoảng 0.5cm',
+          'Bày đĩa, trang trí với rau mùi',
+          'Ăn kèm dưa góp, nước mắm chua ngọt'
+        ]
+      },
+      'chan-gio-muoi': {
+        name: 'Chân giò muối',
+        time: '10 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Chân giò muối - 1 gói (~500g)',
+          'Dưa góp - 200g',
+          'Rau mùi/thì là - 1 bó nhỏ'
+        ],
+        steps: [
+          'Chân giò lấy ra, để nhiệt độ phòng 10 phút',
+          'Thái lát mỏng vừa ăn, khoảng 3-4mm',
+          'Xếp đĩa hình tròn hoặc hình quạt',
+          'Trang trí với rau mùi, thì là',
+          'Ăn kèm dưa góp để cân bằng vị mặn'
+        ]
+      },
+      'cha-com': {
+        name: 'Chả cốm',
+        time: '10 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Chả cốm - 1 gói (~300-400g)',
+          'Rau mùi - 1 bó nhỏ',
+          'Nước mắm chua ngọt - 50ml'
+        ],
+        steps: [
+          'Chả cốm để nguyên trong gói, bảo quản tủ lạnh',
+          'Trước khi ăn, lấy ra để 10 phút',
+          'Thái lát vừa ăn, khoảng 5-7mm',
+          'Xếp đĩa, trang trí với rau mùi',
+          'Ăn kèm nước mắm chua ngọt hoặc tương ớt'
+        ]
+      },
+      'banh-chung': {
+        name: 'Bánh chưng / Bánh tét',
+        time: '15 phút',
+        servings: '4-6 người',
+        ingredients: [
+          'Bánh chưng/tét - 1-2 cái',
+          'Dưa hành - 200g',
+          'Nước mắm - 50ml'
+        ],
+        steps: [
+          'Bánh nguội: hấp lại 10-15 phút cho nóng mềm',
+          'Hoặc: cắt lát, chiên vàng 2 mặt với chút dầu',
+          'Bóc lá, cắt miếng vuông vừa ăn',
+          'Bày đĩa, ăn kèm dưa hành muối',
+          'Chấm nước mắm hoặc ăn không'
+        ]
+      }
+    };
 
-    <div class="section">
-      <h2 class="section-title">🥢 Mon Truyen Thong</h2>
-      <ul class="dish-list">
-        <li class="dish-item">
-          <div class="dish-name">Banh Chung / Banh Tet</div>
-          <div class="dish-desc">Banh gao nep nhan dau xanh, thit heo — linh hon cua mam co Tet.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Gio Lua (Cha Lua)</div>
-          <div class="dish-desc">Gio heo hap la chuoi, thom nhe, dai miu.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Thit Kho Trung</div>
-          <div class="dish-desc">Thit heo kho voi nuoc dua, trung, vi ngot bui dam da.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Canh Kho Qua Nhoi Thit</div>
-          <div class="dish-desc">Muop dang nhoi thit bam, nau canh thanh mat dau nam.</div>
-        </li>
-      </ul>
-    </div>
+    // ==================== STATE ====================
+    let state = {
+      activeMainTab: 'menu',
+      activeDay: 1,
+      days: { 1: {}, 2: {}, 3: {} },
+      shoppingChecked: {}, // { dishId: true/false }
+      showAddPopup: false,
+      showRecipe: null,
+      addPopupSelections: {}
+    };
 
-    <div class="section">
-      <h2 class="section-title">🍲 Mon Man</h2>
-      <ul class="dish-list">
-        <li class="dish-item">
-          <div class="dish-name">Ga Luoc La Chanh</div>
-          <div class="dish-desc">Ga ta luoc chin mem, cham muoi tieu chanh.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Nem Ran (Cha Gio)</div>
-          <div class="dish-desc">Nem chien gion voi nhan thit, mien, nam moc nhi.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Xoi Gac</div>
-          <div class="dish-desc">Xoi nep do tuoi mau gac, deo thom, mang may man.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Tom Rim</div>
-          <div class="dish-desc">Tom su rim nuoc mam ngot, thom lung, dua com tuyet voi.</div>
-        </li>
-      </ul>
-    </div>
+    // ==================== STORAGE ====================
+    function loadState() {
+      try {
+        const saved = localStorage.getItem('tet-menu-v3');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          state.days = parsed.days || { 1: {}, 2: {}, 3: {} };
+          state.shoppingChecked = parsed.shoppingChecked || {};
+        }
+      } catch (e) { console.error('Load error:', e); }
+    }
 
-    <div class="section">
-      <h2 class="section-title">🍬 Mon Ngot & Do Uong</h2>
-      <ul class="dish-list">
-        <li class="dish-item">
-          <div class="dish-name">Mut Tet</div>
-          <div class="dish-desc">Mut dua, mut gung, mut sen, hat dinh — khay mut ngay Tet.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Che Troi Nuoc</div>
-          <div class="dish-desc">Banh troi nuoc nhan dau xanh, chan nuoc duong gung am bung.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Tra Sen / Tra Hoa Cuc</div>
-          <div class="dish-desc">Tra nong thuong thuc cung banh mut, thom nhe thanh tao.</div>
-        </li>
-        <li class="dish-item">
-          <div class="dish-name">Nuoc Mia / Nuoc Dua Tuoi</div>
-          <div class="dish-desc">Giai khat tu nhien, mat lanh ngay xuan.</div>
-        </li>
-      </ul>
-    </div>
+    function saveState() {
+      try {
+        localStorage.setItem('tet-menu-v3', JSON.stringify({
+          days: state.days,
+          shoppingChecked: state.shoppingChecked
+        }));
+      } catch (e) { console.error('Save error:', e); }
+    }
 
-  </div>
+    // ==================== HELPERS ====================
+    function getDishById(id) {
+      return dishesData.find(d => d.id === id);
+    }
 
-  <footer>
-    Chuc Mung Nam Moi 2026 — Binh An & Thinh Vuong
-  </footer>
+    function getDishesForDay(day) {
+      return Object.keys(state.days[day]).map(id => ({
+        ...getDishById(id),
+        done: state.days[day][id].done
+      })).filter(d => d && d.id);
+    }
 
+    function countDone(day) {
+      return getDishesForDay(day).filter(d => d.done).length;
+    }
+
+    function countTotal(day) {
+      return Object.keys(state.days[day]).length;
+    }
+
+    function getAvailableDishes() {
+      const currentDayDishes = Object.keys(state.days[state.activeDay]);
+      return dishesData.filter(d => !currentDayDishes.includes(d.id));
+    }
+
+    function generateShoppingList() {
+      const items = [];
+      dishesData.forEach(dish => {
+        let dayCount = 0;
+        [1, 2, 3].forEach(day => {
+          if (state.days[day][dish.id]) dayCount++;
+        });
+        if (dayCount === 0) return;
+        
+        items.push({
+          id: dish.id,
+          name: dish.name,
+          note: dish.note,
+          source: dish.source,
+          days: dayCount,
+          multiplier: dish.perDay ? dayCount : 1,
+          perDay: dish.perDay,
+          checked: state.shoppingChecked[dish.id] || false
+        });
+      });
+      return items;
+    }
+
+    // ==================== ACTIONS ====================
+    function setMainTab(tab) {
+      state.activeMainTab = tab;
+      renderMain();
+    }
+
+    function setActiveDay(day) {
+      state.activeDay = day;
+      renderMain();
+    }
+
+    function toggleDone(dishId) {
+      if (state.days[state.activeDay][dishId]) {
+        state.days[state.activeDay][dishId].done = !state.days[state.activeDay][dishId].done;
+        saveState();
+        renderMain();
+      }
+    }
+
+    function removeDish(dishId) {
+      delete state.days[state.activeDay][dishId];
+      // Also remove from shopping checked if no longer in any day
+      let stillExists = false;
+      [1, 2, 3].forEach(day => {
+        if (state.days[day][dishId]) stillExists = true;
+      });
+      if (!stillExists) delete state.shoppingChecked[dishId];
+      saveState();
+      renderMain();
+    }
+
+    function toggleShoppingItem(dishId) {
+      state.shoppingChecked[dishId] = !state.shoppingChecked[dishId];
+      saveState();
+      renderMain();
+    }
+
+    function openAddPopup() {
+      state.showAddPopup = true;
+      state.addPopupSelections = {};
+      renderPopup();
+    }
+
+    function closeAddPopup() {
+      state.showAddPopup = false;
+      renderPopup();
+    }
+
+    function toggleAddSelection(dishId) {
+      state.addPopupSelections[dishId] = !state.addPopupSelections[dishId];
+      // Only update the checkbox, not re-render entire popup
+      const checkbox = document.getElementById('cb-' + dishId);
+      const label = document.getElementById('label-' + dishId);
+      if (checkbox && label) {
+        checkbox.checked = state.addPopupSelections[dishId];
+        label.className = state.addPopupSelections[dishId] 
+          ? 'flex items-center gap-3 p-3 rounded-xl cursor-pointer bg-red-50 border-2 border-[#c41e3a]'
+          : 'flex items-center gap-3 p-3 rounded-xl cursor-pointer bg-gray-50 border-2 border-transparent';
+      }
+      // Update button
+      updateAddButton();
+    }
+
+    function updateAddButton() {
+      const count = Object.values(state.addPopupSelections).filter(Boolean).length;
+      const btn = document.getElementById('add-confirm-btn');
+      if (btn) {
+        btn.disabled = count === 0;
+        btn.textContent = count > 0 ? `Thêm ${count} món đã chọn` : 'Chọn món để thêm';
+      }
+    }
+
+    function confirmAddDishes() {
+      Object.keys(state.addPopupSelections).forEach(dishId => {
+        if (state.addPopupSelections[dishId]) {
+          state.days[state.activeDay][dishId] = { done: false };
+        }
+      });
+      saveState();
+      state.showAddPopup = false;
+      renderPopup();
+      renderMain();
+    }
+
+    function openRecipe(dishId) {
+      state.showRecipe = dishId;
+      renderPopup();
+    }
+
+    function closeRecipe() {
+      state.showRecipe = null;
+      renderPopup();
+    }
+
+    // ==================== RENDER ====================
+    function renderMain() {
+      const app = document.getElementById('app');
+      const shoppingList = generateShoppingList();
+      const shoppingCount = shoppingList.length;
+      const boughtCount = shoppingList.filter(i => i.checked).length;
+      
+      app.innerHTML = `
+        <!-- Header -->
+        <header class="px-4 pt-6 pb-4">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🧧</span>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">Thực đơn Tết</h1>
+              <p class="text-sm text-gray-500">Quản lý món ăn 3 ngày Tết</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Tabs -->
+        <div class="px-4 pb-3">
+          <div class="flex gap-2">
+            <button onclick="setMainTab('menu')" 
+              class="flex-1 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all
+                     ${state.activeMainTab === 'menu' ? 'tab-active' : 'bg-gray-100 text-gray-600'}">
+              🍽️ Thực đơn
+            </button>
+            <button onclick="setMainTab('shopping')" 
+              class="flex-1 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all
+                     ${state.activeMainTab === 'shopping' ? 'tab-active' : 'bg-gray-100 text-gray-600'}">
+              🛒 Đi chợ
+              ${shoppingCount > 0 ? `<span class="${state.activeMainTab === 'shopping' ? 'bg-white/20' : 'bg-[#c41e3a] text-white'} px-2 py-0.5 rounded-full text-xs">${boughtCount}/${shoppingCount}</span>` : ''}
+            </button>
+          </div>
+        </div>
+
+        ${state.activeMainTab === 'menu' ? renderMenuTab() : renderShoppingTab()}
+      `;
+    }
+
+    function renderMenuTab() {
+      const dishes = getDishesForDay(state.activeDay);
+      
+      return `
+        <!-- Day Tabs -->
+        <div class="px-4 pb-4">
+          <div class="flex gap-2">
+            ${[1, 2, 3].map(day => `
+              <button onclick="setActiveDay(${day})"
+                class="flex-1 py-3 rounded-xl text-center transition-all
+                       ${state.activeDay === day ? 'day-active' : 'day-inactive'}">
+                <div class="font-semibold text-sm">Mùng ${day}</div>
+                <div class="text-xs mt-0.5 opacity-80">${countDone(day)}/${countTotal(day)} ✓</div>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Dishes List -->
+        <div class="flex-1 overflow-auto px-4 pb-24">
+          ${dishes.length === 0 ? `
+            <div class="text-center py-16 text-gray-400">
+              <div class="text-5xl mb-4">🍽️</div>
+              <p class="font-medium">Chưa có món nào</p>
+              <p class="text-sm mt-1">Bấm nút bên dưới để thêm món</p>
+            </div>
+          ` : `
+            <div class="space-y-2">
+              ${dishes.map(dish => renderDishItem(dish)).join('')}
+            </div>
+          `}
+        </div>
+
+        <!-- Add Button -->
+        <div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white via-white to-transparent safe-bottom">
+          <div class="max-w-md mx-auto">
+            <button onclick="openAddPopup()"
+              class="w-full py-3.5 bg-[#c41e3a] text-white rounded-xl font-medium text-sm
+                     active:scale-[0.98] transition-all shadow-lg shadow-red-200">
+              + Thêm món vào Mùng ${state.activeDay}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDishItem(dish) {
+      const hasRecipe = recipes[dish.id];
+      return `
+        <div class="bg-gray-50 rounded-xl p-4 flex items-center gap-3 ${dish.done ? 'opacity-60' : ''}">
+          <button onclick="toggleDone('${dish.id}')"
+            class="w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all
+                   ${dish.done ? 'checkbox-done' : 'border-gray-300'}">
+            ${dish.done ? '<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : ''}
+          </button>
+          
+          <div class="flex-1 min-w-0" onclick="${hasRecipe ? `openRecipe('${dish.id}')` : ''}">
+            <div class="font-medium text-gray-900 ${dish.done ? 'line-through-custom' : ''}">${dish.name}</div>
+            ${dish.note || dish.source ? `
+              <div class="text-xs text-gray-500 mt-0.5 truncate">
+                ${dish.note || ''}${dish.note && dish.source ? ' • ' : ''}${dish.source ? `📍 ${dish.source}` : ''}
+              </div>
+            ` : ''}
+          </div>
+          
+          <div class="flex items-center gap-1">
+            ${hasRecipe ? `
+              <button onclick="event.stopPropagation(); openRecipe('${dish.id}')"
+                class="w-9 h-9 rounded-full flex items-center justify-center text-gray-400 hover:bg-white transition-all">
+                📖
+              </button>
+            ` : ''}
+            <button onclick="event.stopPropagation(); removeDish('${dish.id}')"
+              class="w-9 h-9 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-50 hover:text-red-500 transition-all">
+              ✕
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderShoppingTab() {
+      const items = generateShoppingList();
+      const boughtCount = items.filter(i => i.checked).length;
+      const progress = items.length > 0 ? (boughtCount / items.length) * 100 : 0;
+      
+      return `
+        <div class="flex-1 overflow-auto px-4 pb-8">
+          ${items.length === 0 ? `
+            <div class="text-center py-16 text-gray-400">
+              <div class="text-5xl mb-4">🛒</div>
+              <p class="font-medium">Chưa có gì cần mua</p>
+              <p class="text-sm mt-1">Thêm món vào thực đơn trước nhé</p>
+            </div>
+          ` : `
+            <!-- Progress -->
+            <div class="mb-4 p-4 bg-green-50 rounded-xl">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-green-800">Tiến độ mua sắm</span>
+                <span class="text-sm text-green-600">${boughtCount}/${items.length}</span>
+              </div>
+              <div class="h-2 bg-green-200 rounded-full overflow-hidden">
+                <div class="h-full bg-green-500 transition-all duration-300" style="width: ${progress}%"></div>
+              </div>
+            </div>
+            
+            <div class="space-y-2">
+              ${items.map(item => `
+                <div onclick="toggleShoppingItem('${item.id}')"
+                  class="rounded-xl p-4 cursor-pointer transition-all ${item.checked ? 'bg-green-50' : 'bg-gray-50'}">
+                  <div class="flex items-start gap-3">
+                    <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5
+                                ${item.checked ? 'checkbox-bought' : 'border-gray-300'}">
+                      ${item.checked ? '<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : ''}
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium ${item.checked ? 'line-through text-gray-400' : 'text-gray-900'}">${item.name}</div>
+                      ${item.note ? `
+                        <div class="text-sm mt-1 ${item.checked ? 'text-gray-400' : 'text-gray-600'}">
+                          ${item.perDay && item.multiplier > 1 
+                            ? `<span class="${item.checked ? '' : 'text-[#c41e3a] font-medium'}">${item.note} × ${item.multiplier} ngày</span>` 
+                            : item.note}
+                        </div>
+                      ` : ''}
+                      ${item.source ? `
+                        <div class="text-xs mt-1 ${item.checked ? 'text-gray-400' : 'text-amber-600'}">📍 ${item.source}</div>
+                      ` : ''}
+                    </div>
+                    <span class="text-xs text-gray-400 bg-gray-200 px-2 py-1 rounded-full">${item.days} ngày</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            
+            <div class="mt-4 p-3 bg-amber-50 rounded-xl text-xs text-amber-700">
+              💡 <strong>Ghi chú:</strong> Món có "× N ngày" cần mua gấp N lần. Món có 📍 là người khác lo.
+            </div>
+          `}
+        </div>
+      `;
+    }
+
+    function renderPopup() {
+      const container = document.getElementById('popup-container');
+      
+      if (state.showAddPopup) {
+        container.innerHTML = renderAddPopup();
+      } else if (state.showRecipe) {
+        container.innerHTML = renderRecipePopup();
+      } else {
+        container.innerHTML = '';
+      }
+    }
+
+    function renderAddPopup() {
+      const available = getAvailableDishes();
+      const selectedCount = Object.values(state.addPopupSelections).filter(Boolean).length;
+      
+      return `
+        <div class="fixed inset-0 bg-black/50 z-50" onclick="closeAddPopup()">
+          <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl max-h-[80vh] flex flex-col slide-up max-w-md mx-auto"
+               onclick="event.stopPropagation()">
+            
+            <div class="p-4 border-b flex items-center justify-between flex-shrink-0">
+              <div>
+                <h3 class="font-bold text-lg">Thêm món vào Mùng ${state.activeDay}</h3>
+                <p class="text-sm text-gray-500">${available.length} món có sẵn</p>
+              </div>
+              <button onclick="closeAddPopup()" class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-xl">
+                ✕
+              </button>
+            </div>
+            
+            <div class="flex-1 overflow-auto p-4">
+              <div class="space-y-2">
+                ${available.map(dish => `
+                  <label id="label-${dish.id}" 
+                    class="flex items-center gap-3 p-3 rounded-xl cursor-pointer ${state.addPopupSelections[dish.id] ? 'bg-red-50 border-2 border-[#c41e3a]' : 'bg-gray-50 border-2 border-transparent'}">
+                    <input type="checkbox" id="cb-${dish.id}"
+                           ${state.addPopupSelections[dish.id] ? 'checked' : ''}
+                           onchange="toggleAddSelection('${dish.id}')"
+                           class="w-5 h-5 rounded">
+                    <div class="flex-1">
+                      <div class="font-medium text-gray-900">${dish.name}</div>
+                      ${dish.note || dish.source ? `
+                        <div class="text-xs text-gray-500 mt-0.5">
+                          ${dish.note || ''}${dish.note && dish.source ? ' • ' : ''}${dish.source || ''}
+                        </div>
+                      ` : ''}
+                    </div>
+                    ${!dish.perDay ? '<span class="text-xs text-gray-400 bg-gray-200 px-2 py-0.5 rounded">Dùng chung</span>' : ''}
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+            
+            <div class="p-4 border-t flex-shrink-0 safe-bottom">
+              <button id="add-confirm-btn" onclick="confirmAddDishes()"
+                ${selectedCount === 0 ? 'disabled' : ''}
+                class="w-full py-3.5 bg-[#c41e3a] text-white rounded-xl font-medium
+                       disabled:bg-gray-300 disabled:cursor-not-allowed transition-all">
+                ${selectedCount > 0 ? `Thêm ${selectedCount} món đã chọn` : 'Chọn món để thêm'}
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderRecipePopup() {
+      const dish = getDishById(state.showRecipe);
+      const recipe = recipes[state.showRecipe];
+      if (!recipe || !dish) return '';
+      
+      return `
+        <div class="fixed inset-0 bg-black/50 z-50" onclick="closeRecipe()">
+          <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl max-h-[85vh] flex flex-col slide-up max-w-md mx-auto"
+               onclick="event.stopPropagation()">
+            
+            <div class="p-4 border-b flex-shrink-0">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-bold text-lg">${recipe.name}</h3>
+                  <p class="text-sm text-gray-500">${recipe.servings} • ${recipe.time}</p>
+                </div>
+                <button onclick="closeRecipe()" class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-xl">
+                  ✕
+                </button>
+              </div>
+            </div>
+            
+            <div class="flex-1 overflow-auto p-4 space-y-5">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center text-sm">🥬</span>
+                  Nguyên liệu
+                </h4>
+                <div class="bg-amber-50 rounded-xl p-3 space-y-1.5">
+                  ${recipe.ingredients.map(ing => `
+                    <div class="text-sm text-gray-700">• ${ing}</div>
+                  `).join('')}
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-sm">👨‍🍳</span>
+                  Cách làm
+                </h4>
+                <div class="space-y-3">
+                  ${recipe.steps.map((step, i) => `
+                    <div class="flex gap-3">
+                      <div class="w-6 h-6 bg-[#c41e3a] text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                        ${i + 1}
+                      </div>
+                      <p class="text-sm text-gray-700 leading-relaxed">${step}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-4 border-t flex-shrink-0 safe-bottom">
+              <button onclick="closeRecipe()"
+                class="w-full py-3 bg-gray-100 text-gray-700 rounded-xl font-medium">
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== INIT ====================
+    window.setMainTab = setMainTab;
+    window.setActiveDay = setActiveDay;
+    window.toggleDone = toggleDone;
+    window.removeDish = removeDish;
+    window.toggleShoppingItem = toggleShoppingItem;
+    window.openAddPopup = openAddPopup;
+    window.closeAddPopup = closeAddPopup;
+    window.toggleAddSelection = toggleAddSelection;
+    window.confirmAddDishes = confirmAddDishes;
+    window.openRecipe = openRecipe;
+    window.closeRecipe = closeRecipe;
+
+    loadState();
+    renderMain();
+    renderPopup();
+
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('data:text/javascript,self.addEventListener("fetch",e=>e.respondWith(fetch(e.request)))').catch(() => {});
+    }
+  </script>
 </body>
 </html>
