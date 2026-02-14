@@ -667,9 +667,19 @@
         if (dayCount === 0) return;
 
         const recipe = recipes[dish.id];
-        if (!recipe) return;
-
         const multiplier = dish.perDay ? dayCount : 1;
+
+        if (!recipe) {
+          // Fallback for dishes without recipes: use dish name + note
+          const key = ('dish-' + dish.id);
+          ingredientMap[key] = {
+            id: key,
+            name: dish.name,
+            usages: [{ quantity: dish.note || '', dishName: dish.name, multiplier: multiplier, source: dish.source }],
+            checked: state.shoppingChecked[key] || false
+          };
+          return;
+        }
 
         recipe.ingredients.forEach(ing => {
           const dashIdx = ing.indexOf(' - ');
